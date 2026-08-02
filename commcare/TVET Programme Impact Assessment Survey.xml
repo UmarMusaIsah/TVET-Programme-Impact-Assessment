@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>TVET Programme Impact Assessment Survey</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3CB7484D-BFE4-4498-AD2F-D293E3F6A608" uiVersion="1" version="1" name="TVET Programme Impact Assessment Survey">
+					<section_a_respondent_profile />
+					<enumerator_name />
+					<interview_date />
+					<age />
+					<gps_location />
+					<phone_number />
+					<consent_information />
+					<consent />
+					<gender />
+					<state />
+					<tvet_center />
+					<tvet_center_other />
+					<section_b_awareness_and_enrolment />
+					<source_awareness />
+					<awareness_other_specify />
+					<enrolment_year />
+					<training_programme />
+					<training_programme_other />
+					<Please_Specify />
+					<section_c_training_experience />
+					<training_completed />
+					<training_satisfaction />
+					<trainer_quality />
+					<training_materials />
+					<practical_sessions />
+					<skills_acquired />
+					<skills_other_specify />
+					<section_d_employment_and_income_outcomes />
+					<employment_status />
+					<job_related_training />
+					<employment_duration />
+					<income_improvement />
+					<employability_rating />
+					<section_e_programme_satisfaction />
+					<overall_satisfaction />
+					<programme_met_expectations />
+					<future_participation />
+					<additional_comments />
+					<section_f_challenges_and_recommendations />
+					<major_challenges />
+					<challenges_other_specify />
+					<recommendations />
+				</data>
+			</instance>
+			<bind vellum:nodeset="#form/section_a_respondent_profile" nodeset="/data/section_a_respondent_profile" />
+			<bind vellum:nodeset="#form/enumerator_name" nodeset="/data/enumerator_name" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/interview_date" nodeset="/data/interview_date" type="xsd:date" required="true()" />
+			<bind vellum:nodeset="#form/age" nodeset="/data/age" type="xsd:int" constraint=". &gt;= 15 and . &lt;= 65" jr:constraintMsg="jr:itext('age-constraintMsg')" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/gps_location" nodeset="/data/gps_location" type="geopoint" required="true()" />
+			<bind vellum:nodeset="#form/phone_number" nodeset="/data/phone_number" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/consent_information" nodeset="/data/consent_information" />
+			<bind vellum:nodeset="#form/consent" nodeset="/data/consent" required="true()" />
+			<bind vellum:nodeset="#form/gender" nodeset="/data/gender" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/state" nodeset="/data/state" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/tvet_center" nodeset="/data/tvet_center" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/tvet_center_other" nodeset="/data/tvet_center_other" type="xsd:string" vellum:relevant="selected(#form/tvet_center, 'other')" relevant="selected(/data/tvet_center, 'other')" required="false()" />
+			<bind vellum:nodeset="#form/section_b_awareness_and_enrolment" nodeset="/data/section_b_awareness_and_enrolment" />
+			<bind vellum:nodeset="#form/source_awareness" nodeset="/data/source_awareness" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/awareness_other_specify" nodeset="/data/awareness_other_specify" type="xsd:string" vellum:relevant="selected(#form/source_awareness, 'other')" relevant="selected(/data/source_awareness, 'other')" />
+			<bind vellum:nodeset="#form/enrolment_year" nodeset="/data/enrolment_year" type="xsd:int" constraint=". &gt;= 2015" jr:constraintMsg="jr:itext('enrolment_year-constraintMsg')" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/training_programme" nodeset="/data/training_programme" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/training_programme_other" nodeset="/data/training_programme_other" type="xsd:string" vellum:relevant="selected(#form/training_programme, 'other')" relevant="selected(/data/training_programme, 'other')" />
+			<bind vellum:nodeset="#form/Please_Specify" nodeset="/data/Please_Specify" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/section_c_training_experience" nodeset="/data/section_c_training_experience" />
+			<bind vellum:nodeset="#form/training_completed" nodeset="/data/training_completed" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/training_satisfaction" nodeset="/data/training_satisfaction" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/trainer_quality" nodeset="/data/trainer_quality" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/training_materials" nodeset="/data/training_materials" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/practical_sessions" nodeset="/data/practical_sessions" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/skills_acquired" nodeset="/data/skills_acquired" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/skills_other_specify" nodeset="/data/skills_other_specify" type="xsd:string" vellum:relevant="selected(#form/skills_acquired, 'other')" relevant="selected(/data/skills_acquired, 'other')" />
+			<bind vellum:nodeset="#form/section_d_employment_and_income_outcomes" nodeset="/data/section_d_employment_and_income_outcomes" />
+			<bind vellum:nodeset="#form/employment_status" nodeset="/data/employment_status" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/job_related_training" nodeset="/data/job_related_training" vellum:relevant="selected(#form/employment_status, 'employed')" relevant="selected(/data/employment_status, 'employed')" required="true()" />
+			<bind vellum:nodeset="#form/employment_duration" nodeset="/data/employment_duration" vellum:relevant="selected(#form/employment_status, 'employed')" relevant="selected(/data/employment_status, 'employed')" required="true()" />
+			<bind vellum:nodeset="#form/income_improvement" nodeset="/data/income_improvement" vellum:relevant="selected(#form/employment_status, 'employed') or selected(#form/employment_status, 'self_employed')" relevant="selected(/data/employment_status, 'employed') or selected(/data/employment_status, 'self_employed')" required="true()" />
+			<bind vellum:nodeset="#form/employability_rating" nodeset="/data/employability_rating" vellum:relevant="selected(#form/employment_status, 'employed') or selected(#form/employment_status, 'self_employed') or selected(#form/employment_status, 'unemployed') or selected(#form/employment_status, 'student') or selected(#form/employment_status, 'other')" relevant="selected(/data/employment_status, 'employed') or selected(/data/employment_status, 'self_employed') or selected(/data/employment_status, 'unemployed') or selected(/data/employment_status, 'student') or selected(/data/employment_status, 'other')" required="true()" />
+			<bind vellum:nodeset="#form/section_e_programme_satisfaction" nodeset="/data/section_e_programme_satisfaction" />
+			<bind vellum:nodeset="#form/overall_satisfaction" nodeset="/data/overall_satisfaction" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/programme_met_expectations" nodeset="/data/programme_met_expectations" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/future_participation" nodeset="/data/future_participation" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="true()" />
+			<bind vellum:nodeset="#form/additional_comments" nodeset="/data/additional_comments" type="xsd:string" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" />
+			<bind vellum:nodeset="#form/section_f_challenges_and_recommendations" nodeset="/data/section_f_challenges_and_recommendations" />
+			<bind vellum:nodeset="#form/major_challenges" nodeset="/data/major_challenges" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" required="false()" />
+			<bind vellum:nodeset="#form/challenges_other_specify" nodeset="/data/challenges_other_specify" type="xsd:string" vellum:relevant="selected(#form/major_challenges, 'other')" relevant="selected(/data/major_challenges, 'other')" />
+			<bind vellum:nodeset="#form/recommendations" nodeset="/data/recommendations" type="xsd:string" vellum:relevant="selected(#form/consent, 'yes')" relevant="selected(/data/consent, 'yes')" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="section_a_respondent_profile-label">
+						<value>SECTION A: Respondent Profile</value>
+					</text>
+					<text id="enumerator_name-label">
+						<value>Enumerator Name</value>
+					</text>
+					<text id="interview_date-label">
+						<value>Interview Date</value>
+					</text>
+					<text id="age-label">
+						<value>Age</value>
+					</text>
+					<text id="age-constraintMsg">
+						<value>Age must be between 15 and 65 years.</value>
+					</text>
+					<text id="gps_location-label">
+						<value>GPS Location</value>
+					</text>
+					<text id="phone_number-label">
+						<value>Phone Number</value>
+					</text>
+					<text id="consent_information-label">
+						<value>This survey is voluntary. The information collected will be kept confidential and used only for research purposes.</value>
+					</text>
+					<text id="consent-label">
+						<value>Do you voluntarily agree to participate in this interview?</value>
+					</text>
+					<text id="consent-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="consent-no-label">
+						<value>No</value>
+					</text>
+					<text id="gender-label">
+						<value>Gender</value>
+					</text>
+					<text id="gender-male-label">
+						<value>Male</value>
+					</text>
+					<text id="gender-female-label">
+						<value>Female</value>
+					</text>
+					<text id="state-label">
+						<value>State</value>
+					</text>
+					<text id="state-kano-label">
+						<value>Kano</value>
+					</text>
+					<text id="state-katsina-label">
+						<value>Katsina</value>
+					</text>
+					<text id="state-jigawa-label">
+						<value>Jigawa</value>
+					</text>
+					<text id="state-sokoto-label">
+						<value>Sokoto</value>
+					</text>
+					<text id="state-kebbi-label">
+						<value>Kebbi</value>
+					</text>
+					<text id="state-zamfara-label">
+						<value>Zamfara</value>
+					</text>
+					<text id="state-borno-label">
+						<value>Borno</value>
+					</text>
+					<text id="state-yobe-label">
+						<value>Yobe</value>
+					</text>
+					<text id="state-bauchi-label">
+						<value>Bauchi</value>
+					</text>
+					<text id="state-gombe-label">
+						<value>Gombe</value>
+					</text>
+					<text id="state-adamawa-label">
+						<value>Adamawa</value>
+					</text>
+					<text id="state-taraba-label">
+						<value>Taraba</value>
+					</text>
+					<text id="state-niger-label">
+						<value>Niger</value>
+					</text>
+					<text id="state-benue-label">
+						<value>Benue</value>
+					</text>
+					<text id="state-plateau-label">
+						<value>Plateau</value>
+					</text>
+					<text id="state-nasarawa-label">
+						<value>Nasarawa</value>
+					</text>
+					<text id="state-kwara-label">
+						<value>Kwara</value>
+					</text>
+					<text id="state-kogi-label">
+						<value>Kogi</value>
+					</text>
+					<text id="state-fct_abuja-label">
+						<value>FCT Abuja</value>
+					</text>
+					<text id="tvet_center-label">
+						<value>TVET Training Centre</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_kano_–_kano_state-label">
+						<value>Federal Science Technical College, Kano – Kano State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_wudil_–_kano_state-label">
+						<value>Government Technical College, Wudil – Kano State
+</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_gombe_–_gombe_state-label">
+						<value>Federal Science Technical College, Gombe – Gombe State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_bauchi_–_bauchi_state-label">
+						<value>Government Technical College, Bauchi – Bauchi State
+</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_jalingo_–_taraba_state-label">
+						<value>Federal Science Technical College, Jalingo – Taraba State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_mubi_–_adamawa_state-label">
+						<value>Government Technical College, Mubi – Adamawa State
+</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_sokoto_–_sokoto_state-label">
+						<value>Federal Science Technical College, Sokoto – Sokoto State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_gusau_–_zamfara_state-label">
+						<value>Government Technical College, Gusau – Zamfara State
+</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_minna_–_niger_state-label">
+						<value>Federal Science Technical College, Minna – Niger State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_birnin_kebbi_–_kebbi_state-label">
+						<value>Government Technical College, Birnin Kebbi – Kebbi State
+</value>
+					</text>
+					<text id="tvet_center-federal_science_technical_college,_potiskum_–_yobe_state-label">
+						<value>Federal Science Technical College, Potiskum – Yobe State
+</value>
+					</text>
+					<text id="tvet_center-government_technical_college,_maiduguri_–_borno_state-label">
+						<value>Government Technical College, Maiduguri – Borno State
+</value>
+					</text>
+					<text id="tvet_center-other-label">
+						<value>Other (Specify)</value>
+					</text>
+					<text id="tvet_center_other-label">
+						<value>Please Specify TVET Center</value>
+					</text>
+					<text id="section_b_awareness_and_enrolment-label">
+						<value>SECTION B: Awareness and Enrolment</value>
+					</text>
+					<text id="source_awareness-label">
+						<value>How did you first hear about the TVET programme?</value>
+					</text>
+					<text id="source_awareness-radio-label">
+						<value>Radio</value>
+					</text>
+					<text id="source_awareness-television-label">
+						<value>Television</value>
+					</text>
+					<text id="source_awareness-social_media-label">
+						<value>Social Media</value>
+					</text>
+					<text id="source_awareness-friends_family-label">
+						<value>Friends/Family</value>
+					</text>
+					<text id="source_awareness-community_leader-label">
+						<value>Community Leader</value>
+					</text>
+					<text id="source_awareness-ngo-label">
+						<value>NGO</value>
+					</text>
+					<text id="source_awareness-school-label">
+						<value>School</value>
+					</text>
+					<text id="source_awareness-other-label">
+						<value>Other</value>
+					</text>
+					<text id="awareness_other_specify-label">
+						<value>Please Specify</value>
+					</text>
+					<text id="enrolment_year-label">
+						<value>Year of enrolment</value>
+					</text>
+					<text id="enrolment_year-constraintMsg">
+						<value>Enter a valid enrolment year.</value>
+					</text>
+					<text id="training_programme-label">
+						<value>Training Programme</value>
+					</text>
+					<text id="training_programme-ict-label">
+						<value>ICT</value>
+					</text>
+					<text id="training_programme-tailoring-label">
+						<value>Tailoring</value>
+					</text>
+					<text id="training_programme-carpentry-label">
+						<value>Carpentry</value>
+					</text>
+					<text id="training_programme-welding-label">
+						<value>Welding</value>
+					</text>
+					<text id="training_programme-electrical_installation-label">
+						<value>Electrical Installation</value>
+					</text>
+					<text id="training_programme-plumbing-label">
+						<value>Plumbing</value>
+					</text>
+					<text id="training_programme-fashion_design-label">
+						<value>Fashion Design</value>
+					</text>
+					<text id="training_programme-agriculture-label">
+						<value>Agriculture</value>
+					</text>
+					<text id="training_programme-other-label">
+						<value>Other</value>
+					</text>
+					<text id="training_programme_other-label">
+						<value>Please Specify</value>
+					</text>
+					<text id="Please_Specify-label">
+						<value>Training Duration</value>
+					</text>
+					<text id="Please_Specify-lt_3_months-label">
+						<value>Less than 3 months</value>
+					</text>
+					<text id="Please_Specify-choice57-label">
+						<value>3_6_months</value>
+					</text>
+					<text id="Please_Specify-6_12_months-label">
+						<value>6-12 months</value>
+					</text>
+					<text id="Please_Specify-gt_12_months-label">
+						<value>More than 12 months</value>
+					</text>
+					<text id="section_c_training_experience-label">
+						<value>SECTION C: Training Experience</value>
+					</text>
+					<text id="training_completed-label">
+						<value>Did you successfully complete the training programme?</value>
+					</text>
+					<text id="training_completed-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="training_completed-no-label">
+						<value>No</value>
+					</text>
+					<text id="training_satisfaction-label">
+						<value>Overall, how satisfied are you with the training?</value>
+					</text>
+					<text id="training_satisfaction-very_satisfied-label">
+						<value>Very Satisfied</value>
+					</text>
+					<text id="training_satisfaction-satisfied-label">
+						<value>Satisfied</value>
+					</text>
+					<text id="training_satisfaction-dissatisfied-label">
+						<value>Dissatisfied</value>
+					</text>
+					<text id="training_satisfaction-very_dissatisfied-label">
+						<value>Very Dissatisfied</value>
+					</text>
+					<text id="trainer_quality-label">
+						<value>How would you rate the quality of the trainers?</value>
+					</text>
+					<text id="trainer_quality-excellent-label">
+						<value>Excellent</value>
+					</text>
+					<text id="trainer_quality-good-label">
+						<value>Good</value>
+					</text>
+					<text id="trainer_quality-fair-label">
+						<value>Fair</value>
+					</text>
+					<text id="trainer_quality-poor-label">
+						<value>Poor</value>
+					</text>
+					<text id="training_materials-label">
+						<value>Were adequate learning materials provided?</value>
+					</text>
+					<text id="training_materials-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="training_materials-partially-label">
+						<value>Partially</value>
+					</text>
+					<text id="training_materials-no-label">
+						<value>No</value>
+					</text>
+					<text id="practical_sessions-label">
+						<value>Were practical sessions sufficient?</value>
+					</text>
+					<text id="practical_sessions-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="practical_sessions-partially-label">
+						<value>Partially</value>
+					</text>
+					<text id="practical_sessions-no-label">
+						<value>No</value>
+					</text>
+					<text id="skills_acquired-label">
+						<value>Which skills did you acquire during the training?</value>
+					</text>
+					<text id="skills_acquired-technical_skills-label">
+						<value>Technical Skills</value>
+					</text>
+					<text id="skills_acquired-business_skills-label">
+						<value>Business Skills</value>
+					</text>
+					<text id="skills_acquired-communication-label">
+						<value>Communication</value>
+					</text>
+					<text id="skills_acquired-digital_skills-label">
+						<value>Digital Skills</value>
+					</text>
+					<text id="skills_acquired-financial_literacy-label">
+						<value>Financial Literacy</value>
+					</text>
+					<text id="skills_acquired-entrepreneurship-label">
+						<value>Entrepreneurship</value>
+					</text>
+					<text id="skills_acquired-other-label">
+						<value>Other</value>
+					</text>
+					<text id="skills_other_specify-label">
+						<value>Please Specify</value>
+					</text>
+					<text id="section_d_employment_and_income_outcomes-label">
+						<value>SECTION D: Employment and Income Outcomes</value>
+					</text>
+					<text id="employment_status-label">
+						<value>What is your current employment status?</value>
+					</text>
+					<text id="employment_status-employed-label">
+						<value>Employed</value>
+					</text>
+					<text id="employment_status-self_employed-label">
+						<value>Self-employed</value>
+					</text>
+					<text id="employment_status-unempolyed-label">
+						<value>Unemployed</value>
+					</text>
+					<text id="employment_status-student-label">
+						<value>Student</value>
+					</text>
+					<text id="employment_status-other-label">
+						<value>Other</value>
+					</text>
+					<text id="job_related_training-label">
+						<value>Is your current job related to the TVET training you completed?</value>
+					</text>
+					<text id="job_related_training-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="job_related_training-no-label">
+						<value>No</value>
+					</text>
+					<text id="employment_duration-label">
+						<value>How long have you been employed?</value>
+					</text>
+					<text id="employment_duration-lt_6_months-label">
+						<value>Less than 6 months</value>
+					</text>
+					<text id="employment_duration-6_12_months-label">
+						<value>6-12 months</value>
+					</text>
+					<text id="employment_duration-1_2_years-label">
+						<value>1-2 years</value>
+					</text>
+					<text id="employment_duration-gt_2_years-label">
+						<value>More than 2 years</value>
+					</text>
+					<text id="income_improvement-label">
+						<value>Has your monthly income improved after completing the training?</value>
+					</text>
+					<text id="income_improvement-significantly_improved-label">
+						<value>
+Significantly Improved</value>
+					</text>
+					<text id="income_improvement-moderately_improved-label">
+						<value>Moderately Improved</value>
+					</text>
+					<text id="income_improvement-no_change-label">
+						<value>No Change</value>
+					</text>
+					<text id="income_improvement-decreased-label">
+						<value>Decreased</value>
+					</text>
+					<text id="employability_rating-label">
+						<value>How would you rate your employability after completing the training?</value>
+					</text>
+					<text id="employability_rating-excellent-label">
+						<value>Excellent</value>
+					</text>
+					<text id="employability_rating-good-label">
+						<value>Good</value>
+					</text>
+					<text id="employability_rating-fair-label">
+						<value>Fair</value>
+					</text>
+					<text id="employability_rating-poor-label">
+						<value>Poor</value>
+					</text>
+					<text id="employability_rating-very_poor-label">
+						<value>Very Poor</value>
+					</text>
+					<text id="section_e_programme_satisfaction-label">
+						<value>SECTION E: Programme Satisfaction</value>
+					</text>
+					<text id="overall_satisfaction-label">
+						<value>Overall, how satisfied are you with the TVET programme?</value>
+					</text>
+					<text id="overall_satisfaction-very_satisfied-label">
+						<value>Very Satisfied</value>
+					</text>
+					<text id="overall_satisfaction-satisfied-label">
+						<value>Satisfied</value>
+					</text>
+					<text id="overall_satisfaction-neutral-label">
+						<value>Neutral</value>
+					</text>
+					<text id="overall_satisfaction-dissatisfied-label">
+						<value>Dissatisfied</value>
+					</text>
+					<text id="overall_satisfaction-very_dissatisfied-label">
+						<value>Very Dissatisfied</value>
+					</text>
+					<text id="programme_met_expectations-label">
+						<value>Did the programme meet your expectations?</value>
+					</text>
+					<text id="programme_met_expectations-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="programme_met_expectations-partially-label">
+						<value>Partially</value>
+					</text>
+					<text id="programme_met_expectations-no-label">
+						<value>No</value>
+					</text>
+					<text id="future_participation-label">
+						<value>Would you participate in another TVET programme if given the opportunity?</value>
+					</text>
+					<text id="future_participation-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="future_participation-no-label">
+						<value>No</value>
+					</text>
+					<text id="future_participation-not_sure-label">
+						<value>Not Sure</value>
+					</text>
+					<text id="additional_comments-label">
+						<value>Please provide any additional comments or suggestions.</value>
+					</text>
+					<text id="section_f_challenges_and_recommendations-label">
+						<value>SECTION F: Challenges and Recommendations</value>
+					</text>
+					<text id="major_challenges-label">
+						<value>What major challenges have you faced after completing the TVET programme?</value>
+					</text>
+					<text id="major_challenges-lack_of_jobs-label">
+						<value>Lack of Jobs</value>
+					</text>
+					<text id="major_challenges-lack_of_capital-label">
+						<value>Lack of Capital</value>
+					</text>
+					<text id="major_challenges-lack_of_equipment-label">
+						<value>Lack of Equipment</value>
+					</text>
+					<text id="major_challenges-family_responsibilities-label">
+						<value>Family Responsibilities</value>
+					</text>
+					<text id="major_challenges-inadequate_pkills_practice-label">
+						<value>Inadequate Skills Practice</value>
+					</text>
+					<text id="major_challenges-market_competition-label">
+						<value>Market Competition</value>
+					</text>
+					<text id="major_challenges-other-label">
+						<value>Other</value>
+					</text>
+					<text id="challenges_other_specify-label">
+						<value>Please Specify</value>
+					</text>
+					<text id="recommendations-label">
+						<value>What recommendations would you give to improve future TVET programmes?</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<trigger vellum:ref="#form/section_a_respondent_profile" ref="/data/section_a_respondent_profile" appearance="minimal">
+			<label ref="jr:itext('section_a_respondent_profile-label')" />
+		</trigger>
+		<input vellum:ref="#form/enumerator_name" ref="/data/enumerator_name">
+			<label ref="jr:itext('enumerator_name-label')" />
+		</input>
+		<input vellum:ref="#form/interview_date" ref="/data/interview_date">
+			<label ref="jr:itext('interview_date-label')" />
+		</input>
+		<input vellum:ref="#form/age" ref="/data/age">
+			<label ref="jr:itext('age-label')" />
+			<alert ref="jr:itext('age-constraintMsg')" />
+		</input>
+		<input vellum:ref="#form/gps_location" ref="/data/gps_location">
+			<label ref="jr:itext('gps_location-label')" />
+		</input>
+		<input vellum:ref="#form/phone_number" ref="/data/phone_number" appearance="numeric">
+			<label ref="jr:itext('phone_number-label')" />
+		</input>
+		<trigger vellum:ref="#form/consent_information" ref="/data/consent_information" appearance="minimal">
+			<label ref="jr:itext('consent_information-label')" />
+		</trigger>
+		<select vellum:ref="#form/consent" ref="/data/consent">
+			<label ref="jr:itext('consent-label')" />
+			<item>
+				<label ref="jr:itext('consent-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('consent-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/gender" ref="/data/gender">
+			<label ref="jr:itext('gender-label')" />
+			<item>
+				<label ref="jr:itext('gender-male-label')" />
+				<value>male</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gender-female-label')" />
+				<value>female</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/state" ref="/data/state">
+			<label ref="jr:itext('state-label')" />
+			<item>
+				<label ref="jr:itext('state-kano-label')" />
+				<value>kano</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-katsina-label')" />
+				<value>katsina</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-jigawa-label')" />
+				<value>jigawa</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-sokoto-label')" />
+				<value>sokoto</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-kebbi-label')" />
+				<value>kebbi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-zamfara-label')" />
+				<value>zamfara</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-borno-label')" />
+				<value>borno</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-yobe-label')" />
+				<value>yobe</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-bauchi-label')" />
+				<value>bauchi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-gombe-label')" />
+				<value>gombe</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-adamawa-label')" />
+				<value>adamawa</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-taraba-label')" />
+				<value>taraba</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-niger-label')" />
+				<value>niger</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-benue-label')" />
+				<value>benue</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-plateau-label')" />
+				<value>plateau</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-nasarawa-label')" />
+				<value>nasarawa</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-kwara-label')" />
+				<value>kwara</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-kogi-label')" />
+				<value>kogi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('state-fct_abuja-label')" />
+				<value>fct_abuja</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/tvet_center" ref="/data/tvet_center">
+			<label ref="jr:itext('tvet_center-label')" />
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_kano_–_kano_state-label')" />
+				<value>federal_science_technical_college,_kano_–_kano_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_wudil_–_kano_state-label')" />
+				<value>government_technical_college,_wudil_–_kano_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_gombe_–_gombe_state-label')" />
+				<value>federal_science_technical_college,_gombe_–_gombe_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_bauchi_–_bauchi_state-label')" />
+				<value>government_technical_college,_bauchi_–_bauchi_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_jalingo_–_taraba_state-label')" />
+				<value>federal_science_technical_college,_jalingo_–_taraba_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_mubi_–_adamawa_state-label')" />
+				<value>government_technical_college,_mubi_–_adamawa_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_sokoto_–_sokoto_state-label')" />
+				<value>federal_science_technical_college,_sokoto_–_sokoto_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_gusau_–_zamfara_state-label')" />
+				<value>government_technical_college,_gusau_–_zamfara_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_minna_–_niger_state-label')" />
+				<value>federal_science_technical_college,_minna_–_niger_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_birnin_kebbi_–_kebbi_state-label')" />
+				<value>government_technical_college,_birnin_kebbi_–_kebbi_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-federal_science_technical_college,_potiskum_–_yobe_state-label')" />
+				<value>federal_science_technical_college,_potiskum_–_yobe_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-government_technical_college,_maiduguri_–_borno_state-label')" />
+				<value>government_technical_college,_maiduguri_–_borno_state</value>
+			</item>
+			<item>
+				<label ref="jr:itext('tvet_center-other-label')" />
+				<value>other</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/tvet_center_other" ref="/data/tvet_center_other">
+			<label ref="jr:itext('tvet_center_other-label')" />
+		</input>
+		<trigger vellum:ref="#form/section_b_awareness_and_enrolment" ref="/data/section_b_awareness_and_enrolment" appearance="minimal">
+			<label ref="jr:itext('section_b_awareness_and_enrolment-label')" />
+		</trigger>
+		<select vellum:ref="#form/source_awareness" ref="/data/source_awareness">
+			<label ref="jr:itext('source_awareness-label')" />
+			<item>
+				<label ref="jr:itext('source_awareness-radio-label')" />
+				<value>radio</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-television-label')" />
+				<value>television</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-social_media-label')" />
+				<value>social_media</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-friends_family-label')" />
+				<value>friends_family</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-community_leader-label')" />
+				<value>community_leader</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-ngo-label')" />
+				<value>ngo</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-school-label')" />
+				<value>school</value>
+			</item>
+			<item>
+				<label ref="jr:itext('source_awareness-other-label')" />
+				<value>other</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/awareness_other_specify" ref="/data/awareness_other_specify">
+			<label ref="jr:itext('awareness_other_specify-label')" />
+		</input>
+		<input vellum:ref="#form/enrolment_year" ref="/data/enrolment_year">
+			<label ref="jr:itext('enrolment_year-label')" />
+			<alert ref="jr:itext('enrolment_year-constraintMsg')" />
+		</input>
+		<select vellum:ref="#form/training_programme" ref="/data/training_programme">
+			<label ref="jr:itext('training_programme-label')" />
+			<item>
+				<label ref="jr:itext('training_programme-ict-label')" />
+				<value>ict</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-tailoring-label')" />
+				<value>tailoring</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-carpentry-label')" />
+				<value>carpentry</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-welding-label')" />
+				<value>welding</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-electrical_installation-label')" />
+				<value>electrical_installation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-plumbing-label')" />
+				<value>plumbing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-fashion_design-label')" />
+				<value>fashion_design</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-agriculture-label')" />
+				<value>agriculture</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_programme-other-label')" />
+				<value>other</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/training_programme_other" ref="/data/training_programme_other">
+			<label ref="jr:itext('training_programme_other-label')" />
+		</input>
+		<select vellum:ref="#form/Please_Specify" ref="/data/Please_Specify">
+			<label ref="jr:itext('Please_Specify-label')" />
+			<item>
+				<label ref="jr:itext('Please_Specify-lt_3_months-label')" />
+				<value>lt_3_months</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Please_Specify-choice57-label')" />
+				<value>choice57</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Please_Specify-6_12_months-label')" />
+				<value>6_12_months</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Please_Specify-gt_12_months-label')" />
+				<value>gt_12_months</value>
+			</item>
+		</select>
+		<trigger vellum:ref="#form/section_c_training_experience" ref="/data/section_c_training_experience" appearance="minimal">
+			<label ref="jr:itext('section_c_training_experience-label')" />
+		</trigger>
+		<select vellum:ref="#form/training_completed" ref="/data/training_completed">
+			<label ref="jr:itext('training_completed-label')" />
+			<item>
+				<label ref="jr:itext('training_completed-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_completed-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/training_satisfaction" ref="/data/training_satisfaction">
+			<label ref="jr:itext('training_satisfaction-label')" />
+			<item>
+				<label ref="jr:itext('training_satisfaction-very_satisfied-label')" />
+				<value>very_satisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_satisfaction-satisfied-label')" />
+				<value>satisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_satisfaction-dissatisfied-label')" />
+				<value>dissatisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_satisfaction-very_dissatisfied-label')" />
+				<value>very_dissatisfied</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/trainer_quality" ref="/data/trainer_quality">
+			<label ref="jr:itext('trainer_quality-label')" />
+			<item>
+				<label ref="jr:itext('trainer_quality-excellent-label')" />
+				<value>excellent</value>
+			</item>
+			<item>
+				<label ref="jr:itext('trainer_quality-good-label')" />
+				<value>good</value>
+			</item>
+			<item>
+				<label ref="jr:itext('trainer_quality-fair-label')" />
+				<value>fair</value>
+			</item>
+			<item>
+				<label ref="jr:itext('trainer_quality-poor-label')" />
+				<value>poor</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/training_materials" ref="/data/training_materials">
+			<label ref="jr:itext('training_materials-label')" />
+			<item>
+				<label ref="jr:itext('training_materials-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_materials-partially-label')" />
+				<value>partially</value>
+			</item>
+			<item>
+				<label ref="jr:itext('training_materials-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/practical_sessions" ref="/data/practical_sessions">
+			<label ref="jr:itext('practical_sessions-label')" />
+			<item>
+				<label ref="jr:itext('practical_sessions-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('practical_sessions-partially-label')" />
+				<value>partially</value>
+			</item>
+			<item>
+				<label ref="jr:itext('practical_sessions-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select1 vellum:ref="#form/skills_acquired" ref="/data/skills_acquired">
+			<label ref="jr:itext('skills_acquired-label')" />
+			<item>
+				<label ref="jr:itext('skills_acquired-technical_skills-label')" />
+				<value>technical_skills</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-business_skills-label')" />
+				<value>business_skills</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-communication-label')" />
+				<value>communication</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-digital_skills-label')" />
+				<value>digital_skills</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-financial_literacy-label')" />
+				<value>financial_literacy</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-entrepreneurship-label')" />
+				<value>entrepreneurship</value>
+			</item>
+			<item>
+				<label ref="jr:itext('skills_acquired-other-label')" />
+				<value>other</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/skills_other_specify" ref="/data/skills_other_specify">
+			<label ref="jr:itext('skills_other_specify-label')" />
+		</input>
+		<trigger vellum:ref="#form/section_d_employment_and_income_outcomes" ref="/data/section_d_employment_and_income_outcomes" appearance="minimal">
+			<label ref="jr:itext('section_d_employment_and_income_outcomes-label')" />
+		</trigger>
+		<select vellum:ref="#form/employment_status" ref="/data/employment_status">
+			<label ref="jr:itext('employment_status-label')" />
+			<item>
+				<label ref="jr:itext('employment_status-employed-label')" />
+				<value>employed</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_status-self_employed-label')" />
+				<value>self_employed</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_status-unempolyed-label')" />
+				<value>unempolyed</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_status-student-label')" />
+				<value>student</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_status-other-label')" />
+				<value>other</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/job_related_training" ref="/data/job_related_training">
+			<label ref="jr:itext('job_related_training-label')" />
+			<item>
+				<label ref="jr:itext('job_related_training-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('job_related_training-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/employment_duration" ref="/data/employment_duration">
+			<label ref="jr:itext('employment_duration-label')" />
+			<item>
+				<label ref="jr:itext('employment_duration-lt_6_months-label')" />
+				<value>lt_6_months</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_duration-6_12_months-label')" />
+				<value>6_12_months</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_duration-1_2_years-label')" />
+				<value>1_2_years</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employment_duration-gt_2_years-label')" />
+				<value>gt_2_years</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/income_improvement" ref="/data/income_improvement">
+			<label ref="jr:itext('income_improvement-label')" />
+			<item>
+				<label ref="jr:itext('income_improvement-significantly_improved-label')" />
+				<value>significantly_improved</value>
+			</item>
+			<item>
+				<label ref="jr:itext('income_improvement-moderately_improved-label')" />
+				<value>moderately_improved</value>
+			</item>
+			<item>
+				<label ref="jr:itext('income_improvement-no_change-label')" />
+				<value>no_change</value>
+			</item>
+			<item>
+				<label ref="jr:itext('income_improvement-decreased-label')" />
+				<value>decreased</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/employability_rating" ref="/data/employability_rating">
+			<label ref="jr:itext('employability_rating-label')" />
+			<item>
+				<label ref="jr:itext('employability_rating-excellent-label')" />
+				<value>excellent</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employability_rating-good-label')" />
+				<value>good</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employability_rating-fair-label')" />
+				<value>fair</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employability_rating-poor-label')" />
+				<value>poor</value>
+			</item>
+			<item>
+				<label ref="jr:itext('employability_rating-very_poor-label')" />
+				<value>very_poor</value>
+			</item>
+		</select>
+		<trigger vellum:ref="#form/section_e_programme_satisfaction" ref="/data/section_e_programme_satisfaction" appearance="minimal">
+			<label ref="jr:itext('section_e_programme_satisfaction-label')" />
+		</trigger>
+		<select vellum:ref="#form/overall_satisfaction" ref="/data/overall_satisfaction">
+			<label ref="jr:itext('overall_satisfaction-label')" />
+			<item>
+				<label ref="jr:itext('overall_satisfaction-very_satisfied-label')" />
+				<value>very_satisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('overall_satisfaction-satisfied-label')" />
+				<value>satisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('overall_satisfaction-neutral-label')" />
+				<value>neutral</value>
+			</item>
+			<item>
+				<label ref="jr:itext('overall_satisfaction-dissatisfied-label')" />
+				<value>dissatisfied</value>
+			</item>
+			<item>
+				<label ref="jr:itext('overall_satisfaction-very_dissatisfied-label')" />
+				<value>very_dissatisfied</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/programme_met_expectations" ref="/data/programme_met_expectations">
+			<label ref="jr:itext('programme_met_expectations-label')" />
+			<item>
+				<label ref="jr:itext('programme_met_expectations-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('programme_met_expectations-partially-label')" />
+				<value>partially</value>
+			</item>
+			<item>
+				<label ref="jr:itext('programme_met_expectations-no-label')" />
+				<value>no</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/future_participation" ref="/data/future_participation">
+			<label ref="jr:itext('future_participation-label')" />
+			<item>
+				<label ref="jr:itext('future_participation-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('future_participation-no-label')" />
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('future_participation-not_sure-label')" />
+				<value>not_sure</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/additional_comments" ref="/data/additional_comments">
+			<label ref="jr:itext('additional_comments-label')" />
+		</input>
+		<trigger vellum:ref="#form/section_f_challenges_and_recommendations" ref="/data/section_f_challenges_and_recommendations" appearance="minimal">
+			<label ref="jr:itext('section_f_challenges_and_recommendations-label')" />
+		</trigger>
+		<select1 vellum:ref="#form/major_challenges" ref="/data/major_challenges">
+			<label ref="jr:itext('major_challenges-label')" />
+			<item>
+				<label ref="jr:itext('major_challenges-lack_of_jobs-label')" />
+				<value>lack_of_jobs</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-lack_of_capital-label')" />
+				<value>lack_of_capital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-lack_of_equipment-label')" />
+				<value>lack_of_equipment</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-family_responsibilities-label')" />
+				<value>family_responsibilities</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-inadequate_pkills_practice-label')" />
+				<value>inadequate_pkills_practice</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-market_competition-label')" />
+				<value>market_competition</value>
+			</item>
+			<item>
+				<label ref="jr:itext('major_challenges-other-label')" />
+				<value>other</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/challenges_other_specify" ref="/data/challenges_other_specify">
+			<label ref="jr:itext('challenges_other_specify-label')" />
+		</input>
+		<input vellum:ref="#form/recommendations" ref="/data/recommendations">
+			<label ref="jr:itext('recommendations-label')" />
+		</input>
+	</h:body>
+</h:html>
