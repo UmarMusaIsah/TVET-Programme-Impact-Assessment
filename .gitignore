@@ -1,0 +1,22 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Power BI Cache
+*.tmp
+
+# Excel Temporary Files
+~$*.xlsx
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
